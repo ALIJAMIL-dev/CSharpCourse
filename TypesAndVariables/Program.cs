@@ -28,7 +28,7 @@ namespace TypesAndVariables
             Console.WriteLine("Number6 is {0}", number6);
             Console.WriteLine("Number7 is {0}", number7);
             Console.WriteLine("Condition is {0}", condition);
-            Console.WriteLine("Character is {0}", (int)character);
+            Console.WriteLine("Character is {0}", character);
             Console.WriteLine(Days.Friday);
             Console.ReadLine();
         }
