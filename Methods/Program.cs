@@ -9,24 +9,37 @@ namespace Methods
 {
     internal class Program
     {
+        // Main Method + Use Point
         static void Main(string[] args)
         {
-            Add1();
-            Add1();
-            Add1();
-            var result = Add(10, 25);
+            //Add1();
+            //Add1();
+            //Add1();
+            //var result = Add(10, 25);
+
+            int number1;
+            int number2 = 100;
+            var result = Add3(out number1, number2);
             Console.WriteLine(result);
+            Console.WriteLine(number1);
             Console.ReadLine();
         }
+        // First Method
         static void Add1()
         {
             Console.WriteLine("Added!");
         }
+        // Now About Default Values
         static int Add(int number1 = 10, int number2 = 1)
         {
             var result = number1 + number2;
             return result;
         }
-        
+        // Now About Challenge Ref and Out Keyword
+        static int Add3(out int number1, int number2)
+        {
+            number1 = 30;
+            return number1 + number2;
+        }
     }
 }
