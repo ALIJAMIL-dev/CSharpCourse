@@ -21,7 +21,7 @@ namespace Arrays
             //students[2] = "Jack";
 
             //string[] students2 = {"Ali", "John", "Jack"}; // or string[] students2 =
-            //// new [] {"Ali", "John", "Jack"};
+            // new [] {"Ali", "John", "Jack"};
 
             //foreach (var student in students)
             //{

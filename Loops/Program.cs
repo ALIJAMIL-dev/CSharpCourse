@@ -13,7 +13,28 @@ namespace Loops
         {
             //ForLoop();
             //WhileLoop();
+            //DoWhileLoop();
+            //ForEachLoop();
             Console.ReadLine();
+        }
+
+        private static void ForEachLoop()
+        {
+            string[] students2 = { "Ali", "John", "Jack" };
+            foreach (var student in students2)
+            {
+                Console.WriteLine(student);
+            }
+        }
+
+        private static void DoWhileLoop()
+        {
+            int number = 10;
+            do
+            {
+                Console.WriteLine(number);
+                number--;
+            } while (number >= 0);
         }
 
         private static void WhileLoop()
