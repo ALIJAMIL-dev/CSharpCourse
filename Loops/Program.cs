@@ -15,9 +15,31 @@ namespace Loops
             //WhileLoop();
             //DoWhileLoop();
             //ForEachLoop();
-            Console.ReadLine();
-        }
 
+            if (PrimeNumber(11))
+            {
+                Console.WriteLine("This is a Prime Number");
+            }
+            else
+            {
+                Console.WriteLine("This is not a Prime Number");
+            }
+            Console.ReadLine();
+            // Now We will see the Prime Number Program
+        }
+        private static bool PrimeNumber(int number1)
+        {
+            bool result = true;
+            for (int i = 2; i < number1-1; i++)
+            {
+                if (number1 % i == 0)
+                {
+                    result = false;
+                    i = number1;
+                }
+            }
+            return result;
+        }
         private static void ForEachLoop()
         {
             string[] students2 = { "Ali", "John", "Jack" };
