@@ -10,6 +10,12 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
+            //InterfacesIntro();
+            Console.ReadLine();
+        }
+
+        private static void InterfacesIntro()
+        {
             PersonManager manager = new PersonManager();
             Customer customer = new Customer
             {
@@ -19,11 +25,11 @@ namespace Interfaces
                 Address = "Ankara"
             };
             manager.Add(customer);
-            Console.ReadLine();
         }
+
         interface IPerson
         {
-            int ID { get; set; }
+            int ID { get; set; }            
             string FirstName { get; set; }
             string LastName { get; set; }
 
