@@ -10,16 +10,37 @@ namespace AbstractClasses
     {
         static void Main(string[] args)
         {
+            Database database = new SqlServer();
+            database.Add();
+            database.Delete();
+
+            Database database2 = new Oracle();
+            database2.Add();
+            database2.Delete();
+
+            Console.ReadLine();
         }
     }
-    // This is Abstract Class 
-    abstract class AbstractClass
+    abstract class Database
     {
-        protected AbstractClass() 
+        public void Add()
         {
-            Console.WriteLine("Abstract Class Constructor");
+            Console.WriteLine("Added by default!");
+        }
+        public abstract void Delete();
+    }
+    class SqlServer : Database
+    {
+        public override void Delete()
+        {
+            Console.WriteLine("Deleted by SqlServer!");
         }
     }
-    // Summarize of Abstract Class is:
-    // 1.Abstract Classes are using with Inheritance(Virtual Methods)
+    class Oracle : Database
+    {
+        public override void Delete()
+        {
+            Console.WriteLine("Deleted by Oracle!");
+        }
+    }
 }
