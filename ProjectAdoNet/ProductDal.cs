@@ -70,5 +70,14 @@ namespace ProjectAdoNet
             command.ExecuteNonQuery();
             _connection.Close();
         }
+        public void Delete(int id)
+        {
+            ConnectionControl();
+            SqlCommand command = new SqlCommand("DELETE FROM Products where Id=@id", _connection);
+            command.Parameters.AddWithValue("@id", id);
+
+            command.ExecuteNonQuery();
+            _connection.Close();
+        }
     }
 }

@@ -35,30 +35,43 @@
             this.tbxName = new System.Windows.Forms.TextBox();
             this.tbxStockAmount = new System.Windows.Forms.TextBox();
             this.tbxUnitPrice = new System.Windows.Forms.TextBox();
-            this.gbx1 = new System.Windows.Forms.GroupBox();
+            this.gbxAdd = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.gbxUpdate = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.tbxNameUpdate = new System.Windows.Forms.TextBox();
+            this.tbxUnitPriceUpdate = new System.Windows.Forms.TextBox();
+            this.lblNameUpdate = new System.Windows.Forms.Label();
+            this.tbxStockAmountUpdate = new System.Windows.Forms.TextBox();
+            this.lblUnitPriceUpdate = new System.Windows.Forms.Label();
+            this.lblStockAmountUpdate = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            this.gbx1.SuspendLayout();
+            this.gbxAdd.SuspendLayout();
+            this.gbxUpdate.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvProducts
             // 
             this.dgvProducts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducts.Location = new System.Drawing.Point(12, 21);
-            this.dgvProducts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvProducts.Location = new System.Drawing.Point(13, 57);
+            this.dgvProducts.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 26;
-            this.dgvProducts.Size = new System.Drawing.Size(526, 173);
+            this.dgvProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgvProducts.Size = new System.Drawing.Size(990, 213);
             this.dgvProducts.TabIndex = 0;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(10, 32);
+            this.lblName.Location = new System.Drawing.Point(12, 39);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(34, 13);
+            this.lblName.Size = new System.Drawing.Size(43, 17);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
@@ -66,9 +79,10 @@
             // unitPrice
             // 
             this.unitPrice.AutoSize = true;
-            this.unitPrice.Location = new System.Drawing.Point(10, 71);
+            this.unitPrice.Location = new System.Drawing.Point(12, 87);
+            this.unitPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.unitPrice.Name = "unitPrice";
-            this.unitPrice.Size = new System.Drawing.Size(52, 13);
+            this.unitPrice.Size = new System.Drawing.Size(65, 17);
             this.unitPrice.TabIndex = 2;
             this.unitPrice.Text = "Unit Price";
             this.unitPrice.Click += new System.EventHandler(this.label2_Click);
@@ -76,77 +90,182 @@
             // lblStockAmount
             // 
             this.lblStockAmount.AutoSize = true;
-            this.lblStockAmount.Location = new System.Drawing.Point(10, 108);
+            this.lblStockAmount.Location = new System.Drawing.Point(12, 133);
+            this.lblStockAmount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStockAmount.Name = "lblStockAmount";
-            this.lblStockAmount.Size = new System.Drawing.Size(73, 13);
+            this.lblStockAmount.Size = new System.Drawing.Size(96, 17);
             this.lblStockAmount.TabIndex = 3;
             this.lblStockAmount.Text = "Stock Amount";
             this.lblStockAmount.Click += new System.EventHandler(this.lblStockAmount_Click);
             // 
             // tbxName
             // 
-            this.tbxName.Location = new System.Drawing.Point(120, 32);
+            this.tbxName.Location = new System.Drawing.Point(140, 39);
+            this.tbxName.Margin = new System.Windows.Forms.Padding(4);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(177, 20);
+            this.tbxName.Size = new System.Drawing.Size(206, 24);
             this.tbxName.TabIndex = 4;
             this.tbxName.TextChanged += new System.EventHandler(this.tbxName_TextChanged);
             // 
             // tbxStockAmount
             // 
-            this.tbxStockAmount.Location = new System.Drawing.Point(120, 101);
+            this.tbxStockAmount.Location = new System.Drawing.Point(140, 124);
+            this.tbxStockAmount.Margin = new System.Windows.Forms.Padding(4);
             this.tbxStockAmount.Name = "tbxStockAmount";
-            this.tbxStockAmount.Size = new System.Drawing.Size(177, 20);
+            this.tbxStockAmount.Size = new System.Drawing.Size(206, 24);
             this.tbxStockAmount.TabIndex = 5;
             this.tbxStockAmount.TextChanged += new System.EventHandler(this.tbxStockAmount_TextChanged);
             // 
             // tbxUnitPrice
             // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(120, 68);
+            this.tbxUnitPrice.Location = new System.Drawing.Point(140, 84);
+            this.tbxUnitPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Size = new System.Drawing.Size(177, 20);
+            this.tbxUnitPrice.Size = new System.Drawing.Size(206, 24);
             this.tbxUnitPrice.TabIndex = 6;
             this.tbxUnitPrice.TextChanged += new System.EventHandler(this.tbxUnitPrice_TextChanged);
             // 
-            // gbx1
+            // gbxAdd
             // 
-            this.gbx1.Controls.Add(this.btnAdd);
-            this.gbx1.Controls.Add(this.tbxName);
-            this.gbx1.Controls.Add(this.tbxUnitPrice);
-            this.gbx1.Controls.Add(this.lblName);
-            this.gbx1.Controls.Add(this.tbxStockAmount);
-            this.gbx1.Controls.Add(this.unitPrice);
-            this.gbx1.Controls.Add(this.lblStockAmount);
-            this.gbx1.Location = new System.Drawing.Point(12, 199);
-            this.gbx1.Name = "gbx1";
-            this.gbx1.Size = new System.Drawing.Size(418, 202);
-            this.gbx1.TabIndex = 7;
-            this.gbx1.TabStop = false;
-            this.gbx1.Text = "Add a Product";
+            this.gbxAdd.Controls.Add(this.btnAdd);
+            this.gbxAdd.Controls.Add(this.tbxName);
+            this.gbxAdd.Controls.Add(this.tbxUnitPrice);
+            this.gbxAdd.Controls.Add(this.lblName);
+            this.gbxAdd.Controls.Add(this.tbxStockAmount);
+            this.gbxAdd.Controls.Add(this.unitPrice);
+            this.gbxAdd.Controls.Add(this.lblStockAmount);
+            this.gbxAdd.Location = new System.Drawing.Point(13, 276);
+            this.gbxAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxAdd.Name = "gbxAdd";
+            this.gbxAdd.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxAdd.Size = new System.Drawing.Size(488, 249);
+            this.gbxAdd.TabIndex = 7;
+            this.gbxAdd.TabStop = false;
+            this.gbxAdd.Text = "Add a Product";
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(120, 143);
+            this.btnAdd.Location = new System.Drawing.Point(140, 176);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(177, 23);
+            this.btnAdd.Size = new System.Drawing.Size(206, 28);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // gbxUpdate
+            // 
+            this.gbxUpdate.Controls.Add(this.btnUpdate);
+            this.gbxUpdate.Controls.Add(this.tbxNameUpdate);
+            this.gbxUpdate.Controls.Add(this.tbxUnitPriceUpdate);
+            this.gbxUpdate.Controls.Add(this.lblNameUpdate);
+            this.gbxUpdate.Controls.Add(this.tbxStockAmountUpdate);
+            this.gbxUpdate.Controls.Add(this.lblUnitPriceUpdate);
+            this.gbxUpdate.Controls.Add(this.lblStockAmountUpdate);
+            this.gbxUpdate.Location = new System.Drawing.Point(509, 276);
+            this.gbxUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxUpdate.Name = "gbxUpdate";
+            this.gbxUpdate.Padding = new System.Windows.Forms.Padding(4);
+            this.gbxUpdate.Size = new System.Drawing.Size(494, 249);
+            this.gbxUpdate.TabIndex = 8;
+            this.gbxUpdate.TabStop = false;
+            this.gbxUpdate.Text = "Update a Product";
+            this.gbxUpdate.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(140, 176);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(206, 28);
+            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // tbxNameUpdate
+            // 
+            this.tbxNameUpdate.Location = new System.Drawing.Point(140, 39);
+            this.tbxNameUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxNameUpdate.Name = "tbxNameUpdate";
+            this.tbxNameUpdate.Size = new System.Drawing.Size(206, 24);
+            this.tbxNameUpdate.TabIndex = 4;
+            // 
+            // tbxUnitPriceUpdate
+            // 
+            this.tbxUnitPriceUpdate.Location = new System.Drawing.Point(140, 84);
+            this.tbxUnitPriceUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxUnitPriceUpdate.Name = "tbxUnitPriceUpdate";
+            this.tbxUnitPriceUpdate.Size = new System.Drawing.Size(206, 24);
+            this.tbxUnitPriceUpdate.TabIndex = 6;
+            // 
+            // lblNameUpdate
+            // 
+            this.lblNameUpdate.AutoSize = true;
+            this.lblNameUpdate.Location = new System.Drawing.Point(12, 39);
+            this.lblNameUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNameUpdate.Name = "lblNameUpdate";
+            this.lblNameUpdate.Size = new System.Drawing.Size(43, 17);
+            this.lblNameUpdate.TabIndex = 1;
+            this.lblNameUpdate.Text = "Name";
+            // 
+            // tbxStockAmountUpdate
+            // 
+            this.tbxStockAmountUpdate.Location = new System.Drawing.Point(140, 124);
+            this.tbxStockAmountUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxStockAmountUpdate.Name = "tbxStockAmountUpdate";
+            this.tbxStockAmountUpdate.Size = new System.Drawing.Size(206, 24);
+            this.tbxStockAmountUpdate.TabIndex = 5;
+            // 
+            // lblUnitPriceUpdate
+            // 
+            this.lblUnitPriceUpdate.AutoSize = true;
+            this.lblUnitPriceUpdate.Location = new System.Drawing.Point(12, 87);
+            this.lblUnitPriceUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUnitPriceUpdate.Name = "lblUnitPriceUpdate";
+            this.lblUnitPriceUpdate.Size = new System.Drawing.Size(65, 17);
+            this.lblUnitPriceUpdate.TabIndex = 2;
+            this.lblUnitPriceUpdate.Text = "Unit Price";
+            // 
+            // lblStockAmountUpdate
+            // 
+            this.lblStockAmountUpdate.AutoSize = true;
+            this.lblStockAmountUpdate.Location = new System.Drawing.Point(12, 133);
+            this.lblStockAmountUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStockAmountUpdate.Name = "lblStockAmountUpdate";
+            this.lblStockAmountUpdate.Size = new System.Drawing.Size(96, 17);
+            this.lblStockAmountUpdate.TabIndex = 3;
+            this.lblStockAmountUpdate.Text = "Stock Amount";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(649, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(206, 40);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Remove";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 413);
-            this.Controls.Add(this.gbx1);
+            this.ClientSize = new System.Drawing.Size(1018, 538);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.gbxUpdate);
+            this.Controls.Add(this.gbxAdd);
             this.Controls.Add(this.dgvProducts);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.Name = "Form1";
             this.Text = "Product Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            this.gbx1.ResumeLayout(false);
-            this.gbx1.PerformLayout();
+            this.gbxAdd.ResumeLayout(false);
+            this.gbxAdd.PerformLayout();
+            this.gbxUpdate.ResumeLayout(false);
+            this.gbxUpdate.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -160,8 +279,17 @@
         private System.Windows.Forms.TextBox tbxName;
         private System.Windows.Forms.TextBox tbxStockAmount;
         private System.Windows.Forms.TextBox tbxUnitPrice;
-        private System.Windows.Forms.GroupBox gbx1;
+        private System.Windows.Forms.GroupBox gbxAdd;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.GroupBox gbxUpdate;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox tbxNameUpdate;
+        private System.Windows.Forms.TextBox tbxUnitPriceUpdate;
+        private System.Windows.Forms.Label lblNameUpdate;
+        private System.Windows.Forms.TextBox tbxStockAmountUpdate;
+        private System.Windows.Forms.Label lblUnitPriceUpdate;
+        private System.Windows.Forms.Label lblStockAmountUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

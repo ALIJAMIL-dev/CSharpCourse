@@ -68,5 +68,37 @@ namespace ProjectAdoNet
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void dgvProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tbxNameUpdate.Text = dgvProducts.CurrentRow.Cells[1].Value.ToString();
+            tbxUnitPriceUpdate.Text = dgvProducts.CurrentRow.Cells[2].Value.ToString();
+            tbxStockAmountUpdate.Text = dgvProducts.CurrentRow.Cells[3].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            Product product = new Product
+            {
+                Id = Convert.ToInt32(dgvProducts.CurrentRow.Cells[0].Value),
+                Name = tbxNameUpdate.Text,
+                UnitPrice = Convert.ToDecimal(tbxUnitPriceUpdate.Text),
+                StockAmount = Convert.ToInt32(tbxStockAmountUpdate.Text),
+            };
+            _productDal.Update(product);
+            LoadProducts();
+            MessageBox.Show("Product Updated");
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(dgvProducts.CurrentRow.Cells[0].Value);
+            _productDal.Delete(id);
+            LoadProducts();
+            MessageBox.Show("Product Removed!");
+        }
     }
 }
