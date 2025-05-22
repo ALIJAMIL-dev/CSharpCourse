@@ -1,4 +1,4 @@
-﻿namespace ProjectAdoNet
+﻿namespace AdoNetDemo
 {
     partial class Form1
     {
