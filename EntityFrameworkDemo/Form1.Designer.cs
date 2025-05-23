@@ -53,12 +53,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(649, 9);
+            this.btnDelete.Location = new System.Drawing.Point(13, 9);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(206, 40);
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "Remove";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // gbxUpdate
             // 
@@ -87,6 +88,7 @@
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // tbxNameUpdate
             // 
@@ -169,6 +171,7 @@
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tbxName
             // 
@@ -236,6 +239,7 @@
             this.dgvProducts.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvProducts.Size = new System.Drawing.Size(990, 213);
             this.dgvProducts.TabIndex = 10;
+            this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
             // Form1
             // 
@@ -247,7 +251,8 @@
             this.Controls.Add(this.gbxAdd);
             this.Controls.Add(this.dgvProducts);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Product Manager";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxUpdate.ResumeLayout(false);
             this.gbxUpdate.PerformLayout();
             this.gbxAdd.ResumeLayout(false);
