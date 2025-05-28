@@ -28,6 +28,13 @@ namespace EntityFrameworkDemo
             dgvProducts.DataSource = _productDal.GetAll();
         }
 
+        private void SearchProducts(string key)
+        {
+            //var result = _productDal.GetAll().Where(p => p.Name.ToLower().Contains(key.ToLower())).ToList();
+            var result = _productDal.GetByName(key);
+            dgvProducts.DataSource = result;
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             _productDal.Delete(new Product
@@ -70,5 +77,9 @@ namespace EntityFrameworkDemo
             tbxStockAmountUpdate.Text = dgvProducts.CurrentRow.Cells[3].Value.ToString();
         }
 
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            SearchProducts(tbxSearch.Text);
+        }
     }
 }

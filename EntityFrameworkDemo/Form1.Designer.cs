@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnDelete = new System.Windows.Forms.Button();
             this.gbxUpdate = new System.Windows.Forms.GroupBox();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -46,6 +47,8 @@
             this.unitPrice = new System.Windows.Forms.Label();
             this.lblStockAmount = new System.Windows.Forms.Label();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.gbxUpdate.SuspendLayout();
             this.gbxAdd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
@@ -241,15 +244,35 @@
             this.dgvProducts.TabIndex = 10;
             this.dgvProducts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellClick);
             // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Location = new System.Drawing.Point(649, 18);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(206, 24);
+            this.tbxSearch.TabIndex = 14;
+            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(567, 21);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(50, 17);
+            this.lblSearch.TabIndex = 16;
+            this.lblSearch.Text = "Search";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1023, 532);
+            this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.gbxUpdate);
             this.Controls.Add(this.gbxAdd);
             this.Controls.Add(this.dgvProducts);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Product Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -259,6 +282,7 @@
             this.gbxAdd.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,6 +306,9 @@
         private System.Windows.Forms.Label unitPrice;
         private System.Windows.Forms.Label lblStockAmount;
         private System.Windows.Forms.DataGridView dgvProducts;
+        private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Label lblSearch;
+        }
     }
-}
+
 
