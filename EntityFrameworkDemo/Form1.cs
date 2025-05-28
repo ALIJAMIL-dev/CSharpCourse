@@ -80,6 +80,7 @@ namespace EntityFrameworkDemo
         private void tbxSearch_TextChanged(object sender, EventArgs e)
         {
             SearchProducts(tbxSearch.Text);
+
         }
     }
 }
