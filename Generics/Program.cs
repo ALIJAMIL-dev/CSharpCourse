@@ -112,7 +112,7 @@ namespace Generics
 
     }
 
-    interface IRepositry<T>
+    interface IRepositry<T> where T : class, new()
     {
         List<T> GetAll();
         T Get(int id);
