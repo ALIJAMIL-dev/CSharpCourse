@@ -11,6 +11,20 @@ namespace Exceptions
     {
         static void Main(string[] args)
         {
+            // TryCatch();
+            Func<int, int, int> add = Sum;
+
+            Console.WriteLine(add(3, 5));
+            Console.ReadLine();
+        }
+
+        public static int Sum(int x, int y)
+        {
+            return x + y;
+        }
+
+        private static void TryCatch()
+        {
             // ExceptionsIntro();
 
             // Find();
@@ -23,8 +37,6 @@ namespace Exceptions
             {
                 Console.WriteLine(e.Message);
             }
-
-            Console.ReadLine();
         }
 
         private static void Find()
