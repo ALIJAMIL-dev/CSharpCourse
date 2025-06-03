@@ -58,6 +58,7 @@
             this.cbxCategory.Name = "cbxCategory";
             this.cbxCategory.Size = new System.Drawing.Size(361, 24);
             this.cbxCategory.TabIndex = 1;
+            this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
             // 
             // lblCategory
             // 
@@ -85,6 +86,7 @@
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(361, 24);
             this.tbxSearch.TabIndex = 1;
+            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
             // 
             // lblSearch
             // 
@@ -115,6 +117,7 @@
             this.Controls.Add(this.gbxCategory);
             this.Name = "Form1";
             this.Text = "Products";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gbxCategory.ResumeLayout(false);
             this.gbxCategory.PerformLayout();
             this.gbxSearch.ResumeLayout(false);

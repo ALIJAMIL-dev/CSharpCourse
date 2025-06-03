@@ -11,5 +11,6 @@ namespace RecapProject1
     public class NorthWindContext:DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }
