@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Northwind.DataAccess.Abstract;
 using Northwind.Entities.Concrete;
 
-namespace Northwind.DataAccess.Concrete
+namespace Northwind.DataAccess.Concrete.EntityFramework
 {
-    public class ProductDal
+    public class EFProductDal:IProductDal
     {
         public List<Product> GetAll()
         {
@@ -21,7 +22,7 @@ namespace Northwind.DataAccess.Concrete
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                return context.Products.SingleOrDefault(p=>p.ProductId==Id);
+                return context.Products.SingleOrDefault(p => p.ProductId == Id);
             }
         }
 
@@ -36,10 +37,18 @@ namespace Northwind.DataAccess.Concrete
 
         public void Update(Product product)
         {
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                context.SaveChanges();
+            }
         }
 
         public void Delete(Product product)
         {
+            using (NorthwindContext context = new NorthwindContext())
+            {
+                context.SaveChanges();
+            }
         }
     }
 }
