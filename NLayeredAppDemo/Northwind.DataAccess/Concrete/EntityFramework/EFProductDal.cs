@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Northwind.DataAccess.Abstract;
@@ -8,21 +9,21 @@ using Northwind.Entities.Concrete;
 
 namespace Northwind.DataAccess.Concrete.EntityFramework
 {
-    public class EFProductDal:IProductDal
+    public class EFProductDal : IProductDal
     {
-        public List<Product> GetAll()
+        public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                return context.Products.ToList();
+                return context.Products.ToList(filter);
             }
         }
 
-        public Product Get(int Id)
+        public Product Get(Expression<Func<Product, bool>> filter)
         {
             using (NorthwindContext context = new NorthwindContext())
             {
-                return context.Products.SingleOrDefault(p => p.ProductId == Id);
+                return context.Products.SingleOrDefault(filter);
             }
         }
 
