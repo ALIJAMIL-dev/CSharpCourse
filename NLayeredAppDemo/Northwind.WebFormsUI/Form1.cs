@@ -20,7 +20,7 @@ namespace Northwind.WebFormsUI
         public Form1()
         {
             InitializeComponent();
-            _productService = new ProductManager(new NHProductDal());
+            _productService = new ProductManager(new EFProductDal());
         }
 
         private IProductService _productService;
