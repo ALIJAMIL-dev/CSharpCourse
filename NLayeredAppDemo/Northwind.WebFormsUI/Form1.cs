@@ -15,15 +15,15 @@ using Northwind.DataAccess.Concrete.NHibernate;
 
 namespace Northwind.WebFormsUI
 {
-    public partial class Form1 : Form
+    public partial class Products : Form
     {
-        public Form1()
+        public Products()
         {
             InitializeComponent();
             _productService = new ProductManager(new EFProductDal());
         }
 
-        private IProductService _productService;
+        private IProductService _productService;    
         private void Form1_Load(object sender, EventArgs e)
         {
             dgvProducts.DataSource = _productService.GetAll();
