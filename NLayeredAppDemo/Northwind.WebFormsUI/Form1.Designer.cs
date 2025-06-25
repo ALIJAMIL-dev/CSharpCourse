@@ -30,11 +30,11 @@
         {
             this.dgvProducts = new System.Windows.Forms.DataGridView();
             this.gbxCategorySearch = new System.Windows.Forms.GroupBox();
-            this.gbxNameSearch = new System.Windows.Forms.GroupBox();
-            this.lblCategorySearch = new System.Windows.Forms.Label();
-            this.lblNameSearch = new System.Windows.Forms.Label();
             this.cbxCategorySearch = new System.Windows.Forms.ComboBox();
+            this.lblCategorySearch = new System.Windows.Forms.Label();
+            this.gbxNameSearch = new System.Windows.Forms.GroupBox();
             this.tbxNameSearch = new System.Windows.Forms.TextBox();
+            this.lblNameSearch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             this.gbxCategorySearch.SuspendLayout();
             this.gbxNameSearch.SuspendLayout();
@@ -61,6 +61,24 @@
             this.gbxCategorySearch.TabStop = false;
             this.gbxCategorySearch.Text = "Category Search";
             // 
+            // cbxCategorySearch
+            // 
+            this.cbxCategorySearch.FormattingEnabled = true;
+            this.cbxCategorySearch.Location = new System.Drawing.Point(80, 42);
+            this.cbxCategorySearch.Name = "cbxCategorySearch";
+            this.cbxCategorySearch.Size = new System.Drawing.Size(601, 24);
+            this.cbxCategorySearch.TabIndex = 1;
+            this.cbxCategorySearch.SelectedIndexChanged += new System.EventHandler(this.cbxCategorySearch_SelectedIndexChanged);
+            // 
+            // lblCategorySearch
+            // 
+            this.lblCategorySearch.AutoSize = true;
+            this.lblCategorySearch.Location = new System.Drawing.Point(7, 42);
+            this.lblCategorySearch.Name = "lblCategorySearch";
+            this.lblCategorySearch.Size = new System.Drawing.Size(65, 17);
+            this.lblCategorySearch.TabIndex = 0;
+            this.lblCategorySearch.Text = "Category";
+            // 
             // gbxNameSearch
             // 
             this.gbxNameSearch.Controls.Add(this.tbxNameSearch);
@@ -72,14 +90,13 @@
             this.gbxNameSearch.TabStop = false;
             this.gbxNameSearch.Text = "Name Search";
             // 
-            // lblCategorySearch
+            // tbxNameSearch
             // 
-            this.lblCategorySearch.AutoSize = true;
-            this.lblCategorySearch.Location = new System.Drawing.Point(7, 42);
-            this.lblCategorySearch.Name = "lblCategorySearch";
-            this.lblCategorySearch.Size = new System.Drawing.Size(65, 17);
-            this.lblCategorySearch.TabIndex = 0;
-            this.lblCategorySearch.Text = "Category";
+            this.tbxNameSearch.Location = new System.Drawing.Point(80, 49);
+            this.tbxNameSearch.Name = "tbxNameSearch";
+            this.tbxNameSearch.Size = new System.Drawing.Size(601, 24);
+            this.tbxNameSearch.TabIndex = 2;
+            this.tbxNameSearch.TextChanged += new System.EventHandler(this.tbxNameSearch_TextChanged);
             // 
             // lblNameSearch
             // 
@@ -89,21 +106,6 @@
             this.lblNameSearch.Size = new System.Drawing.Size(43, 17);
             this.lblNameSearch.TabIndex = 1;
             this.lblNameSearch.Text = "Name";
-            // 
-            // cbxCategorySearch
-            // 
-            this.cbxCategorySearch.FormattingEnabled = true;
-            this.cbxCategorySearch.Location = new System.Drawing.Point(80, 42);
-            this.cbxCategorySearch.Name = "cbxCategorySearch";
-            this.cbxCategorySearch.Size = new System.Drawing.Size(601, 24);
-            this.cbxCategorySearch.TabIndex = 1;
-            // 
-            // tbxNameSearch
-            // 
-            this.tbxNameSearch.Location = new System.Drawing.Point(80, 49);
-            this.tbxNameSearch.Name = "tbxNameSearch";
-            this.tbxNameSearch.Size = new System.Drawing.Size(601, 24);
-            this.tbxNameSearch.TabIndex = 2;
             // 
             // Products
             // 

@@ -21,12 +21,52 @@ namespace Northwind.WebFormsUI
         {
             InitializeComponent();
             _productService = new ProductManager(new EFProductDal());
+            _categoryService = new CategoryManager(new EFCategoryDal());
         }
 
-        private IProductService _productService;    
+        private IProductService _productService;
+        private ICategoryService _categoryService;
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadProducts();
+            LoadCategories();
+        }
+
+        private void LoadCategories()
+        {
+            cbxCategorySearch.DataSource = _categoryService.GetAll();
+            cbxCategorySearch.DisplayMember = "CategoryName";
+            cbxCategorySearch.ValueMember = "CategoryId";
+        }
+
+        private void LoadProducts()
+        {
             dgvProducts.DataSource = _productService.GetAll();
+        }
+
+        private void cbxCategorySearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvProducts.DataSource = _productService.GetAllByCategory(Convert.ToInt32(cbxCategorySearch.SelectedValue));
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        private void tbxNameSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(tbxNameSearch.Text))
+            {
+                dgvProducts.DataSource = _productService.GetAllByName(tbxNameSearch.Text);
+            }
+            else
+            {
+                LoadProducts();
+            }
         }
     }
 }

@@ -7,10 +7,9 @@ using Northwind.Entities.Concrete;
 
 namespace Northwind.Business.Abstract
 {
-    public interface IProductService
+    public interface ICategoryService
     {
-        List<Product> GetAll();
-        List<Product> GetAllByCategory(int categoryId);
-        List<Product> GetAllByName(string productName);
+        List<Category> GetAll();
+
     }
 }
