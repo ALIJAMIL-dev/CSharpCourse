@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Northwind.Business.Abstract;
 using Northwind.DataAccess.Abstract;
 using Northwind.DataAccess.Concrete.EntityFramework;
+using System.Data.Entity.Infrastructure;
 
 namespace Northwind.Business.Concrete
 {
@@ -44,6 +45,18 @@ namespace Northwind.Business.Concrete
         public void Update(Product product)
         {
             _productDal.Update(product);
+        }
+
+        public void Delete(Product product)
+        {
+            try
+            {
+                _productDal.Delete(product);
+            }
+            catch (DbUpdateException ex)
+            {
+                throw new Exception("Update Not Did!");
+            }
         }
     }
 }
