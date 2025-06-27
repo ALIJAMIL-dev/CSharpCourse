@@ -9,6 +9,8 @@ using Northwind.Business.Abstract;
 using Northwind.DataAccess.Abstract;
 using Northwind.DataAccess.Concrete.EntityFramework;
 using System.Data.Entity.Infrastructure;
+using Northwind.Business.Utilities;
+using Northwind.Business.ValidationRules.FluentValidation;
 
 namespace Northwind.Business.Concrete
 {
@@ -39,11 +41,13 @@ namespace Northwind.Business.Concrete
 
         public void Add(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
             _productDal.Add(product);
         }
 
         public void Update(Product product)
         {
+            ValidationTool.Validate(new ProductValidator(), product);
             _productDal.Update(product);
         }
 

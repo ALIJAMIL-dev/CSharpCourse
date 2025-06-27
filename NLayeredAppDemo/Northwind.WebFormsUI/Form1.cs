@@ -85,17 +85,24 @@ namespace Northwind.WebFormsUI
 
         private void btnAddSave_Click(object sender, EventArgs e)
         {
-            _productService.Add(new Product
+            try
             {
-                CategoryId = Convert.ToInt32(cbxAddCategoryID.SelectedValue),
-                ProductName = tbxAddProductName.Text,
-                UnitPrice = Convert.ToDecimal(tbxAddUnitPrice.Text),
-                QuantityPerUnit = tbxAddQuantityPerUnit.Text,
-                UnitsInStock = Convert.ToInt16(tbxAddStock.Text)
-
-            });
-            MessageBox.Show("Product Added Successfully!");
-            LoadProducts();
+                _productService.Add(new Product
+                {
+                    CategoryId = Convert.ToInt32(cbxAddCategoryID.SelectedValue),
+                    ProductName = tbxAddProductName.Text,
+                    UnitPrice = Convert.ToDecimal(tbxAddUnitPrice.Text),
+                    QuantityPerUnit = tbxAddQuantityPerUnit.Text,
+                    UnitsInStock = Convert.ToInt16(tbxAddStock.Text)
+                });
+                MessageBox.Show("Product Added Successfully!");
+                LoadProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding product: " + ex.Message);
+                return;
+            }
         }
 
         private void btnUpdateSave_Click(object sender, EventArgs e)
