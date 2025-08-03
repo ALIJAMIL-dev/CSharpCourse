@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prototype", "Prototype\Prot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Builder", "Builder\Builder.csproj", "{AD60E8AC-9685-4BF9-A1C8-7B8B5F4F0365}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{EE862D91-D00A-4A24-95EC-3286AEF1DC58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.csproj", "{666A4669-DEA1-4902-BA44-ED4F14FCBDDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{AD60E8AC-9685-4BF9-A1C8-7B8B5F4F0365}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD60E8AC-9685-4BF9-A1C8-7B8B5F4F0365}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD60E8AC-9685-4BF9-A1C8-7B8B5F4F0365}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE862D91-D00A-4A24-95EC-3286AEF1DC58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE862D91-D00A-4A24-95EC-3286AEF1DC58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE862D91-D00A-4A24-95EC-3286AEF1DC58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE862D91-D00A-4A24-95EC-3286AEF1DC58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{666A4669-DEA1-4902-BA44-ED4F14FCBDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{666A4669-DEA1-4902-BA44-ED4F14FCBDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{666A4669-DEA1-4902-BA44-ED4F14FCBDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{666A4669-DEA1-4902-BA44-ED4F14FCBDDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
